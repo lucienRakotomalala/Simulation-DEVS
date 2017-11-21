@@ -47,7 +47,7 @@ public class Proc implements AtomicBehaviour{
 			return Double.POSITIVE_INFINITY;
 		}
 		else if(current_state == 1){
-			return 2.0;
+			return 1.0;
 		}
 		return -1;
 	}
