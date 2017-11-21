@@ -6,6 +6,13 @@ public class Gen implements AtomicBehaviour{
 	int current_state;
 	int next_state;
 	double e;
+	String name;
+	
+	public Gen(String n) {
+		this.name = n;
+	}
+	
+	public String getName() {return this.name;}
 	
 	public void init() {
 		current_state = 0;

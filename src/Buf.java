@@ -7,6 +7,13 @@ public class Buf implements AtomicBehaviour{
 	int next_state;
 	double e;
 	int q = 0;
+	String name;
+	
+	public Buf(String n) {
+		this.name = n;
+	}
+	
+	public String getName() {return this.name;}
 	
 	public void init() {
 		current_state = 0;
