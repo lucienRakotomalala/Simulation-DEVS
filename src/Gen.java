@@ -69,7 +69,7 @@ public class Gen implements AtomicBehaviour{
 	public double getTa(){
 
 		if(current_state == 0){
-			return 2.0;
+			return 1.0;
 		}
 		return -1;
 	}
