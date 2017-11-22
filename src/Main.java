@@ -15,8 +15,8 @@ public class Main {
 		double finalTime = 5;
 		atomicArray.clear();
 		atomicArray.add(myProc);
-		atomicArray.add(myGen);
 		atomicArray.add(myBuf);
+		atomicArray.add(myGen);
 
 		System.out.println(atomicArray);
 		/* Init tr all components   */
