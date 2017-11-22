@@ -3,6 +3,11 @@ import java.util.HashMap;
 
 public class Proc implements AtomicBehaviour{
 	
+	@Override
+	public String toString() {
+		return "Proc\t s(" + current_state+") tr("+tr+")";
+	}
+
 	int current_state;
 	int next_state;
 	double tr;

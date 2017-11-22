@@ -74,6 +74,11 @@ public class Buf implements AtomicBehaviour{
 		current_state = next_state;
 	}
 
+	@Override
+	public String toString() {
+		return "Buf\t s(" + current_state+") tr("+tr+")";
+	}
+
 	public ArrayList<String> lambda(){
 		ArrayList<String> outputs = new ArrayList<>();
 		HashMap<String,Boolean> boolean_outputs = new HashMap<String,Boolean>();
