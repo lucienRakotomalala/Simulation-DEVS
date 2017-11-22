@@ -10,11 +10,15 @@ public class Main {
 		
 		
 		ArrayList<AtomicBehaviour> atomicArray = new ArrayList<AtomicBehaviour>(); 
+		
 		double currentTime = 0;
 		double finalTime = 5;
-		atomicArray.add(myBuf);
+		atomicArray.clear();
 		atomicArray.add(myProc);
 		atomicArray.add(myGen);
+		atomicArray.add(myBuf);
+
+		System.out.println(atomicArray);
 		/* Init tr all components   */
 		for(AtomicBehaviour e : atomicArray)
 		{
@@ -96,7 +100,7 @@ public class Main {
 				 }
 				 else
 				 {
-						b.setTr(b.getTa()-tmin); 
+						b.setTr(b.getTr()-tmin); 
 				 }
 
 				System.out.println(text+"\t fin:"+b);

@@ -49,6 +49,7 @@ public class Buf implements AtomicBehaviour{
 
 	
 	public void delta_ext(ArrayList<String> inputs){
+		
 		if(current_state == 0 && inputs.contains("job")){
 			q++;
 			next_state = 1;
@@ -62,6 +63,14 @@ public class Buf implements AtomicBehaviour{
 			next_state = 2;
 		}
 		else if(current_state == 2 && inputs.contains("done")){
+			if(q>0)
+				next_state = 1;
+			if(q==0)
+				next_state = 0;
+		}
+		
+		if(inputs.contains("job") && inputs.contains("done"))
+		{
 			if(q>0)
 				next_state = 1;
 			if(q==0)
