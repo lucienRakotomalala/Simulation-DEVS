@@ -5,29 +5,50 @@ public class Buf implements AtomicBehaviour{
 	
 	int current_state;
 	int next_state;
-	double e;
+	double tr;
 	int q = 0;
 	String name;
+	ArrayList<String> outputs;
+	ArrayList<String> inputs;
 	
-	public Buf(String n) {
-		this.name = n;
+	public Buf(String name){
+		this.name = name;
+		outputs = new ArrayList<>();
+		outputs.add("req");
+
+		inputs = new ArrayList<>();
+		inputs.add("done");
+		inputs.add("job");
 	}
 	
-	public String getName() {return this.name;}
+	public ArrayList<String> getOutputs() {
+		return outputs;
+	}
+
+	public ArrayList<String> getInputs() {
+		return inputs;
+	}
+
 	
+	public String getName() {
+		return name;
+	}
+
 	public void init() {
 		current_state = 0;
 	}
 
-	public void delta_int(double t){
+	public void delta_int(){
 		if(current_state == 1){
 			q--;
 			next_state = 2;
 		}
+		current_state = next_state;
+
 	}
 
 	
-	public void delta_ext(double t, ArrayList<String> inputs){
+	public void delta_ext(ArrayList<String> inputs){
 		if(current_state == 0 && inputs.contains("job")){
 			q++;
 			next_state = 1;
@@ -46,6 +67,11 @@ public class Buf implements AtomicBehaviour{
 			if(q==0)
 				next_state = 0;
 		}
+		current_state = next_state;
+	}
+	
+	public void delta_con(ArrayList<String> inputs){
+		current_state = next_state;
 	}
 
 	public ArrayList<String> lambda(){
@@ -71,5 +97,13 @@ public class Buf implements AtomicBehaviour{
 		}
 		
 		return 0;
+	}
+	
+	public double getTr(){
+		return tr;
+	}
+	
+	public void setTr(double tr){
+		this.tr = tr;
 	}
 }
