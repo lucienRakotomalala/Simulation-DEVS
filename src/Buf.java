@@ -69,13 +69,6 @@ public class Buf implements AtomicBehaviour{
 				next_state = 0;
 		}
 		
-		if(inputs.contains("job") && inputs.contains("done"))
-		{
-			if(q>0)
-				next_state = 1;
-			if(q==0)
-				next_state = 0;
-		}
 		current_state = next_state;
 	}
 	
