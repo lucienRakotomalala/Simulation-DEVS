@@ -47,7 +47,7 @@ public class Main {
 						
 							
 				}
-				else if(elem.getTa()==tmin) {
+				else if(elem.getTr()==tmin) {
 					imminentComponent.add(elem);
 				}
 				
